@@ -1,0 +1,31 @@
+<div class="alert alert-danger" *ngIf="error" role="alert">
+    <h3 class="alert-heading">Error</h3>
+    <p>
+      {{ error | json }}
+    </p>
+    <p class="mb-0"></p>
+</div>
+
+<div class="alert alert-info" *ngIf="loading" role="alert">
+    <h3 class="alert-heading text-center">Cargando</h3>
+    <p class="text-center">
+      <i class="fa fa-sync fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0"></p>
+</div>
+
+<div class="row border p-1"  *ngIf="!loading">
+    <div class="col-4">
+        <img [src]="userCopy.avatar" alt="" class="img-thumbnail">
+    </div>
+    <div class="col" style="display: flex; align-items: center; justify-content: center;">
+        <ul class="list-group text-center">
+            <li>
+                Nombre: {{userCopy.first_name}}
+            </li>
+            <li>
+                Apellido: {{userCopy.last_name}}
+            </li>
+        </ul>
+    </div>
+</div>
